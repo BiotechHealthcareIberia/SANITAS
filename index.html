@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Título de la pestaña -->
     <title>Tarifa Sanitas 2026</title>
+    
+    <!-- Metadatos para compartir el enlace (Social Media & Preview) -->
+    <meta property="og:title" content="Tarifa Sanitas 2026">
+    <meta property="og:description" content="Portal de Tarifas y Gestión Comercial Biotech Healthcare para Sanitas 2026.">
+    <meta name="description" content="Tarifa Preferente Sanitas 2026 - Biotech Healthcare">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -171,7 +178,6 @@
                 </div>
 
                 <div class="flex z-10">
-                    <!-- Acceso al Calculador Externo Biotech -->
                     <a href="https://biotechcalculators.com/" target="_blank" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-wider hover:bg-blue-50 transition-all flex items-center gap-3 shadow-lg">
                         <i data-lucide="calculator" class="w-5 h-5"></i> Calculador Biotech
                     </a>
@@ -313,7 +319,6 @@
         <!-- PESTAÑA 4: LOGÍSTICA Y GESTIÓN -->
         <div id="logistic" class="tab-content space-y-8 animate-in">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Logística Phakic -->
                 <div class="bg-white p-6 md:p-10 rounded-[40px] border border-slate-100 shadow-xl">
                     <h4 class="font-black text-2xl text-slate-900 uppercase mb-8 flex items-center gap-4 border-b pb-4">
                         <i data-lucide="truck" class="text-blue-600"></i> Logística Eyecryl Phakic
@@ -343,7 +348,6 @@
                     </div>
                 </div>
 
-                <!-- Devoluciones -->
                 <div class="bg-slate-900 p-6 md:p-10 rounded-[40px] text-white shadow-2xl">
                     <h4 class="font-black text-2xl uppercase mb-8 flex items-center gap-4 border-b border-white/10 pb-4 text-blue-400">
                         <i data-lucide="refresh-cw"></i> Política de Devoluciones
@@ -354,7 +358,6 @@
                     </ul>
                 </div>
 
-                <!-- Contabilidad Rappel -->
                 <div class="bg-white p-6 md:p-10 rounded-[40px] border border-slate-100 shadow-xl">
                     <h4 class="font-black text-2xl text-slate-900 uppercase mb-8 flex items-center gap-4 border-b pb-4">
                         <i data-lucide="calculator" class="text-emerald-600"></i> Contabilidad de Rappel
@@ -366,7 +369,6 @@
                     </div>
                 </div>
 
-                <!-- Contacto Facturación -->
                 <div class="bg-white p-6 md:p-10 rounded-[40px] border-2 border-blue-600 shadow-xl flex flex-col justify-center items-center text-center">
                     <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="user" class="w-10 h-10 text-blue-600"></i>
@@ -381,7 +383,6 @@
                 </div>
             </div>
 
-            <!-- Especialistas Biotech -->
             <div class="bg-white p-6 md:p-10 rounded-[40px] border border-slate-100 shadow-xl mt-8">
                 <div class="flex items-center gap-4 mb-8"><i data-lucide="users" class="w-7 h-7 text-blue-600"></i><h3 class="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tight">Especialistas Biotech de Zona</h3></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="contact-list-container"></div>
