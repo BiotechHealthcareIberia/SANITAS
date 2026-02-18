@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Biotech | Acuerdo Sanitas 2026</title>
+    <title>Tarifa Sanitas 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -117,6 +117,12 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
+        .section-header {
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
         .contact-card {
             background: #f8fafc;
             border: 1px solid #f1f5f9;
@@ -189,6 +195,11 @@
                         </thead>
                         <tbody id="product-list" class="divide-y divide-slate-50"></tbody>
                     </table>
+                </div>
+                <div class="px-6 py-4 bg-slate-50/50 border-t border-slate-100">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wide italic">
+                        * Todos los precios son revisables anualmente y no incluyen IVA.
+                    </p>
                 </div>
             </div>
             <div id="confidential-footer-catalog" class="confidential-card"></div>
@@ -302,7 +313,7 @@
         <!-- PESTAÑA 4: LOGÍSTICA Y GESTIÓN -->
         <div id="logistic" class="tab-content space-y-8 animate-in">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Logística Phakic Actualizada -->
+                <!-- Logística Phakic -->
                 <div class="bg-white p-6 md:p-10 rounded-[40px] border border-slate-100 shadow-xl">
                     <h4 class="font-black text-2xl text-slate-900 uppercase mb-8 flex items-center gap-4 border-b pb-4">
                         <i data-lucide="truck" class="text-blue-600"></i> Logística Eyecryl Phakic
@@ -332,7 +343,7 @@
                     </div>
                 </div>
 
-                <!-- Devoluciones Actualizada -->
+                <!-- Devoluciones -->
                 <div class="bg-slate-900 p-6 md:p-10 rounded-[40px] text-white shadow-2xl">
                     <h4 class="font-black text-2xl uppercase mb-8 flex items-center gap-4 border-b border-white/10 pb-4 text-blue-400">
                         <i data-lucide="refresh-cw"></i> Política de Devoluciones
@@ -351,7 +362,6 @@
                     <div class="space-y-4 text-xs font-bold text-slate-500">
                         <p class="flex items-center gap-3"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500"></i> Se calcula sobre la facturación neta anual acumulada.</p>
                         <p class="flex items-center gap-3"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500"></i> Excluye lentes entregadas FOC (Free of Charge).</p>
-                        <p class="flex items-center gap-3"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500"></i> Excluye consumibles de un solo uso promocionados.</p>
                         <p class="flex items-center gap-3 font-black text-slate-900 mt-6 bg-emerald-50 p-4 rounded-xl">Liquidación centralizada mediante abono a año vencido.</p>
                     </div>
                 </div>
@@ -407,9 +417,9 @@
             { cat: 'EDOF', name: 'Optiflex Xtense Comfort Plus', price: 375.00, new: true, desc: 'Lente visión continua EDOF.' },
             
             // MONOFOCALES
-            { cat: 'EDOF', name: 'Eyecryl SERT (Edof/Monofocal avanzada)', price: 115.00, desc: 'Asférica precargada automatizada de rango extendido.' },
-            { cat: 'EDOF', name: 'Eyecryl SERT Toric cyl 1', price: 210.00, desc: 'Tórica precargada cyl 1.' },
-            { cat: 'EDOF', name: 'Eyecryl SERT Toric otros cyls', price: 230.00, desc: 'Tórica precargada para altos astigmatismos.' },
+            { cat: 'EDOF', name: 'Eyecryl SERT (Edof/Monofocal avanzada)', price: 115.00, highlight: true, desc: 'Asférica precargada automatizada de rango extendido.' },
+            { cat: 'EDOF', name: 'Eyecryl SERT Toric cyl 1', price: 210.00, highlight: true, desc: 'Tórica precargada cyl 1.' },
+            { cat: 'EDOF', name: 'Eyecryl SERT Toric otros cyls', price: 230.00, highlight: true, desc: 'Tórica precargada para altos astigmatismos.' },
             { cat: 'MULTIFOCAL', name: 'Eyecryl Actv', price: 210.00, desc: 'Diseño difractivo HD.' },
             { cat: 'MONOFOCAL', name: 'Eyecryl Plus', price: 45.00, desc: 'Hidrofóbica una pieza manual.' },
             { cat: 'MONOFOCAL', name: 'Eyecryl 600', price: 35.00, desc: 'Hidrofílica clásica.' },
@@ -467,8 +477,8 @@
         function renderProducts() {
             const list = document.getElementById('product-list');
             list.innerHTML = products.map(p => `
-                <tr class="hover:bg-slate-50 transition-colors">
-                    <td class="p-6 font-black text-slate-800 text-[13px]">
+                <tr class="hover:bg-slate-50 transition-colors ${p.highlight ? 'bg-blue-50/40' : ''}">
+                    <td class="p-6 font-black text-slate-800 text-[13px] ${p.highlight ? 'border-l-4 border-blue-600' : ''}">
                         <div class="flex items-center gap-2 mb-1">
                             ${p.name} 
                             ${p.new ? '<span class="badge-new">NUEVO</span>' : ''}
