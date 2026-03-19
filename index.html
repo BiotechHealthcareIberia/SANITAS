@@ -159,6 +159,7 @@
 
         <!-- PESTAÑA 1: TARIFA -->
         <div id="catalog" class="tab-content active space-y-6 animate-in">
+            <!-- Email Pedidos y Acceso Calculador -->
             <div class="bg-blue-600 p-6 md:p-10 rounded-[32px] text-white shadow-xl flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                 <div class="flex items-center gap-5 z-10">
@@ -389,15 +390,42 @@
         ];
 
         const avgPrices = { pseudo: 115, phakic: 750, visco: 11 };
-        const phakicSpecs = "Tallas stock: 12.0 / 12.5 / 13.5mm. Requisitos: ACD mín. endotelio 2.8mm. Puerto central.";
+        const phakicCommon = "Tallas stock: 12.0 / 12.5 / 13.0 / 13.5mm. Requisitos: ACD mín. endotelio 2.8mm. Puerto central.";
 
         const products = [
             // PHAKIC
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic baja potencia (esf/tor)', price: 550.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (sph)', price: 615.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (tor)', price: 920.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic low cyl (+0.50D y +1.00D)', price: 615.00, upgrade: true, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic Custom', price: 1350.00, special: true, desc: 'Tallas especiales o potencias fuera de rango. No admite devolución.' },
+            { 
+                cat: 'PHAKIC', 
+                name: 'Eyecryl Phakic baja potencia (esf/tor)', 
+                price: 550.00, 
+                desc: 'SPH +0.50D a +2.75D / SPH -0.50D a -6D con o sin CYL hasta +5D en plano intraocular. ' + phakicCommon 
+            },
+            { 
+                cat: 'PHAKIC', 
+                name: 'Eyecryl Phakic alta potencia (sph)', 
+                price: 615.00, 
+                desc: 'SPH +3.00D a +10D / SPH -6.50D a -25D. CYL hasta +5D en plano intraocular. ' + phakicCommon 
+            },
+            { 
+                cat: 'PHAKIC', 
+                name: 'Eyecryl Phakic alta potencia (tor)', 
+                price: 920.00, 
+                desc: 'SPH +3.00D a +10D / SPH -6.50D a -25D. CYL hasta +5D en plano intraocular. ' + phakicCommon 
+            },
+            { 
+                cat: 'PHAKIC', 
+                name: 'Eyecryl Phakic low cyl (+0.50D y +1.00D)', 
+                price: 615.00, 
+                upgrade: true, 
+                desc: 'Baja potencia cilíndrica. ' + phakicCommon 
+            },
+            { 
+                cat: 'PHAKIC', 
+                name: 'Eyecryl Phakic Custom', 
+                price: 1350.00, 
+                special: true, 
+                desc: '-25D / +10D o CIL > +5D. Tallas especiales: 11, 11.5, 14 o tallas a medida. <b>No admite devolución.</b>' 
+            },
             
             // TRIFOCAL
             { cat: 'TRIFOCAL', name: 'Optiflex Trio 3FLA6', price: 300.00, desc: 'Trifocal hidrofóbica de 3 piezas.' },
