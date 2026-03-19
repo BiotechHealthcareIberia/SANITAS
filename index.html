@@ -63,7 +63,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 12px 16px;
-            font-size: 16px; /* Evita zoom automático en iOS */
+            font-size: 16px; 
             outline: none;
             transition: all 0.2s;
             width: 100%;
@@ -84,7 +84,6 @@
             display: block;
         }
 
-        /* Badges con degradado sutil */
         .badge-new {
             background: linear-gradient(135deg, #fbbf24, #f59e0b); 
             color: #451a03;
@@ -130,7 +129,6 @@
         }
         .contact-card:hover { border-color: #2563eb; transform: translateY(-2px); }
 
-        /* Optimización de tablas en móvil */
         .table-scroll {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -161,7 +159,6 @@
 
         <!-- PESTAÑA 1: TARIFA -->
         <div id="catalog" class="tab-content active space-y-6 animate-in">
-            <!-- Email Pedidos y Acceso Calculador -->
             <div class="bg-blue-600 p-6 md:p-10 rounded-[32px] text-white shadow-xl flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                 <div class="flex items-center gap-5 z-10">
@@ -392,15 +389,15 @@
         ];
 
         const avgPrices = { pseudo: 115, phakic: 750, visco: 11 };
-        const phakicSpecs = "Tallas stock: 12.0 / 12.5 / 13.5mm. Requisitos: ACD mín. endotelio 2.8mm (incl. hipermetropía). Puerto central en toda la gama. Refracciones en plano intraocular.";
+        const phakicSpecs = "Tallas stock: 12.0 / 12.5 / 13.5mm. Requisitos: ACD mín. endotelio 2.8mm. Puerto central.";
 
         const products = [
             // PHAKIC
             { cat: 'PHAKIC', name: 'Eyecryl Phakic baja potencia (esf/tor)', price: 550.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (sph)', price: 770.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (tor)', price: 990.00, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic low cyl (+0.50D y +1.00D)', price: 770.00, upgrade: true, desc: phakicSpecs },
-            { cat: 'PHAKIC', name: 'Eyecryl Phakic Custom', price: 1450.00, special: true, desc: 'Tallas especiales o potencias fuera de rango estándar. <b>Estas lentes no admiten devolución.</b>' },
+            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (sph)', price: 615.00, desc: phakicSpecs },
+            { cat: 'PHAKIC', name: 'Eyecryl Phakic alta potencia (tor)', price: 920.00, desc: phakicSpecs },
+            { cat: 'PHAKIC', name: 'Eyecryl Phakic low cyl (+0.50D y +1.00D)', price: 615.00, upgrade: true, desc: phakicSpecs },
+            { cat: 'PHAKIC', name: 'Eyecryl Phakic Custom', price: 1350.00, special: true, desc: 'Tallas especiales o potencias fuera de rango. No admite devolución.' },
             
             // TRIFOCAL
             { cat: 'TRIFOCAL', name: 'Optiflex Trio 3FLA6', price: 300.00, desc: 'Trifocal hidrofóbica de 3 piezas.' },
@@ -409,7 +406,7 @@
             { cat: 'EDOF', name: 'Optiflex Xtense Comfort Plus', price: 375.00, new: true, desc: 'Lente visión continua EDOF.' },
             
             // MONOFOCALES
-            { cat: 'EDOF', name: 'Eyecryl SERT (Edof/Monofocal avanzada)', price: 115.00, highlight: true, desc: 'Asférica precargada automatizada de rango extendido.' },
+            { cat: 'EDOF', name: 'Eyecryl SERT (Edof/Monofocal avanzada)', price: 115.00, highlight: true, desc: 'Asférica precargada automatizada.' },
             { cat: 'EDOF', name: 'Eyecryl SERT Toric cyl 1', price: 210.00, highlight: true, desc: 'Tórica precargada cyl 1.' },
             { cat: 'EDOF', name: 'Eyecryl SERT Toric otros cyls', price: 230.00, highlight: true, desc: 'Tórica precargada para altos astigmatismos.' },
             { cat: 'MULTIFOCAL', name: 'Eyecryl Actv', price: 210.00, desc: 'Diseño difractivo HD.' },
@@ -425,10 +422,10 @@
             { cat: 'OVDs', name: 'Bio Hyalur HV 1ml', price: 12.00, desc: 'Alta viscosidad.' },
             { cat: 'OVDs', name: 'Bio Hyalur SV 1ml', price: 12.50, desc: 'Súper viscosidad.' },
             { cat: 'OVDs', name: 'Bio Hyalur Duo 1ml', price: 20.00, desc: 'Pack combinado.' },
-            { cat: 'OVDs', name: 'Bio Hyalur CS 1ml', price: 23.00, desc: 'Fórmula con Condroitín Sulfato.' },
+            { cat: 'OVDs', name: 'Bio Hyalur CS 1ml', price: 23.00, desc: 'Con Condroitín Sulfato.' },
             { cat: 'OVDs', name: 'Bio Hyalur LVD 1ml', price: 24.50, desc: 'Dispersivo baja viscosidad.' },
             
-            // VR Y OTROS
+            // OTROS
             { cat: 'OTROS', name: 'Bio Blue 1ml PFS', price: 9.50, desc: 'Azul de Trypan.' },
             { cat: 'OTROS', name: 'PMMA CTR Clear / Blue', price: 20.00, desc: 'Anillo de tensión capsular.' },
             { cat: 'OTROS', name: 'Iris Retractors', price: 40.00, desc: 'Set retractores iris.' },
@@ -436,7 +433,7 @@
             { cat: 'VR', name: 'Bio Blue DUO', price: 40.00, desc: 'Doble tinción selectiva.' },
             { cat: 'VR', name: 'BioSil / Silicon Oil', price: 45.00, desc: 'Aceite de silicona.' },
             { cat: 'VR', name: 'Bio Decaline / Octane', price: 45.00, desc: 'Perfluorocarbonos.' },
-            { cat: 'OTROS', name: 'Bioring', price: 245.00, desc: 'Indentación escleral (par).' }
+            { cat: 'OTROS', name: 'Bioring', price: 245.00, desc: 'Indentación escleral (par)' }
         ];
 
         const contacts = [
